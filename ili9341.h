@@ -13,6 +13,8 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
+#include "ili9341_hw_cfg.h"
+
 #define ILI9341_MAX_DRIVERS_CNT       (2)  /**< Maximal number of driver instances (displays attached). */
 
 /* Colors */
