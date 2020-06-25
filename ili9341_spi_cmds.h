@@ -109,8 +109,4 @@ typedef enum {
 } ili9341_cmd_t;
 
 
-} ili9341_cmd_t;
-
-
-
 #endif /* ILI9341_ILI9341_SPI_CMDS_H_ */

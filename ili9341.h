@@ -115,24 +115,24 @@ typedef struct ili9341_cfg_st {
 } ili9341_cfg_t;
 
 typedef struct ili9341_hw_cfg_st {
-	uint8_t pwctrla[5];
-	uint8_t pwctrlb[3];
-	uint8_t timctrla[3];
-	uint8_t timctrlb[3];
-	uint8_t ponseqctrl[4];
-	uint8_t pumpratctrl[1];
-	uint8_t pwctr1[1];
-	uint8_t pwctr2[1];
-	uint8_t vmctr1[2];
-	uint8_t vmctr2[1];
-	uint8_t madctl[1];
-	uint8_t pixfmt[1];
-	uint8_t frmctr1[2];
-	uint8_t dfunctr[3];
-	uint8_t g3enable[1];
-	uint8_t gammaset[1];
-	uint8_t gmctrp1[15];
-	uint8_t gmctrn1[15];
+	ili9341_pwctrla_t pwctrla;
+	ili9341_pwctrlb_t pwctrlb;
+	ili9341_timctrla_t timctrla;
+	ili9341_timctrlb_t timctrlb;
+	ili9341_ponseqctrl_t ponseqctrl;
+	ili9341_pumpratctrl_t pumpratctrl;
+	ili9341_pwctr1_t pwctr1;
+	ili9341_pwctr2_t pwctr2;
+	ili9341_vmctr1_t vmctr1;
+	ili9341_vmctr2_t vmctr2;
+	ili9341_madctl_t madctl;
+	ili9341_pixfmt_t pixfmt;
+	ili9341_frmctr1_t frmctr1;
+	ili9341_dfunctr_t dfunctr;
+	ili9341_3genable_t g3enable;
+	ili9341_gammaset_t gammaset;
+	ili9341_gmctrp1_t gmctrp1;
+	ili9341_gmctrn1_t gmctrn1;
 } ili9341_hw_cfg_t;
 
 /**
