@@ -1,10 +1,7 @@
 /*
- * ili9341_hw_cfg.h
+ * ILI9341 driver registers descriptors
  *
- * ILI9341 driver registers
- *
- * Data types in this file describe registers of the display driver
- *
+ * Author: Michal Horn
  */
 
 #ifndef ILI9341_DRIVER_ILI9341_HW_CFG_H_
@@ -15,8 +12,6 @@
  *
  * 24 bits display identification information
  */
-
-
 typedef union {
 	uint8_t param[5];
 	struct {

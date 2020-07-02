@@ -1,8 +1,7 @@
 /*
- * ili9341_spi_cmds.h
+ * ILI9341 SPI commands codes.
  *
- *  Created on: 5. 6. 2019
- *      Author: Michal Horn
+ * Author: Michal Horn
  */
 
 #ifndef ILI9341_ILI9341_SPI_CMDS_H_
@@ -10,6 +9,9 @@
 
 #define ILI9341_CMD_LEN (1) ///< Lenght of a command in bytes.
 
+/**
+ * ILI9341 SPI commands codes.
+ */
 typedef enum {
 	ILI9341_CMD_NOP = 0x00,     ///< No-op register
 	ILI9341_CMD_SWRESET = 0x01, ///< Software reset register

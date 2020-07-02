@@ -1,10 +1,17 @@
 /*
- * ili9341.h
+ * Simple Driver for ILI9341 display controller with SPI interface
  *
- *  Created on: 5. 6. 2019
- *      Author: Michal Horn
-
+ * See README.md file for guide and features.
+ *
+ * * Multi display support
+ * * Complete Power ON configuration
+ * * Hardware abstraction for easy porting
+ * * Basic graphics operations
+ * * Basic display manipulations
+ *
+ * Author: Michal Horn
  */
+
 
 #ifndef ILI9341_ILI9341_H_
 #define ILI9341_ILI9341_H_
@@ -114,6 +121,9 @@ typedef struct ili9341_cfg_st {
 	uint32_t wup_delay_ms;	/**< Delay after wakeup command */
 } ili9341_cfg_t;
 
+/**
+ * ILI9341 chip configuration.
+ */
 typedef struct ili9341_hw_cfg_st {
 	ili9341_pwctrla_t pwctrla;
 	ili9341_pwctrlb_t pwctrlb;

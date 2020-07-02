@@ -1,8 +1,15 @@
 /*
- * ili9341.c
+ * Simple Driver for ILI9341 display controller with SPI interface
  *
- *  Created on: 5. 6. 2019
- *      Author: Michal Horn
+ * See README.md file for guide and features.
+ *
+ * * Multi display support
+ * * Complete Power ON configuration
+ * * Hardware abstraction for easy porting
+ * * Basic graphics operations
+ * * Basic display manipulations
+ *
+ * Author: Michal Horn
  */
 
 #include "ili9341.h"
