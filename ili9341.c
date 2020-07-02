@@ -339,13 +339,11 @@ int ili9341_fill_region(const ili9341_desc_ptr_t desc, uint16_t color) {
 	uint32_t width = desc->region_bottom_right.x - desc->region_top_left.x+1;
 	uint32_t height = desc->region_bottom_right.y - desc->region_top_left.y + 1;
 	uint32_t size = width*height;
-	const int BUFF_SIZE = 128;
+	const int BUFF_SIZE = 1024;
 
 	uint8_t buffer[BUFF_SIZE];
 	uint8_t color_lsb = color&0xFF;
 	uint8_t color_msb = (color>>8)&0xFF;
-
-	/* FIXME: Optimize by turning off memory pointer incrementation for DMA. */
 
 	uint32_t tx_size = size*2;
 	uint32_t segments = tx_size/BUFF_SIZE;
