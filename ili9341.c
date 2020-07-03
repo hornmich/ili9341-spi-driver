@@ -357,8 +357,8 @@ int ili9341_fill_region(const ili9341_desc_ptr_t desc, uint16_t color) {
 	uint32_t rest = tx_size%BUFF_SIZE;
 
 	for (int i = 0; i < BUFF_SIZE; i+=2) {
-		buffer[i] = color_lsb;
-		buffer[i+1] = color_msb;
+		buffer[i] = color_msb;
+		buffer[i+1] = color_lsb;
 	}
 
 	_ili9341_write_bytes_start(desc);
