@@ -188,6 +188,25 @@ void _ili9341_delay_ms(const ili9341_desc_ptr_t desc, uint32_t time_ms) {
 	} while(!timeout);
 }
 
+bool _ili9341_region_valid(const coord_2d_t* top_left, const coord_2d_t* bottom_right) {
+	return (top_left->x <= bottom_right->x && top_left->y <= bottom_right->y);
+}
+
+void _ili9341_swap(uint16_t* v1, uint16_t* v2) {
+	uint16_t tmp = *v1;
+	*v1 = *v2;
+	*v2 = tmp;
+}
+
+void _ili9341_fix_region(coord_2d_t* top_left, coord_2d_t* bottom_right) {
+	if (top_left->x > bottom_right->x) {
+		_ili9341_swap(&top_left->x, &bottom_right->x);
+	}
+	if (top_left->y > bottom_right->y) {
+		_ili9341_swap(&top_left->y, &bottom_right->y);
+	}
+}
+
 /* Public interface methods. */
 
 ili9341_hw_cfg_t ili9341_get_default_hw_cfg() {
@@ -317,6 +336,10 @@ int ili9341_set_orientation(const ili9341_desc_ptr_t desc, ili9341_orientation_t
 
 int ili9341_set_region(const ili9341_desc_ptr_t desc, coord_2d_t top_left, coord_2d_t bottom_right) {
 	int err = ILI9341_SUCCESS;
+	if (!_ili9341_region_valid(&top_left, &bottom_right)) {
+		_ili9341_fix_region(&top_left, &bottom_right);
+	}
+
 	desc->region_top_left = top_left;
 	desc->region_bottom_right = bottom_right;
 
