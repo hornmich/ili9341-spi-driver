@@ -174,4 +174,4 @@ The possible usage may look like that:
 
 ## Examples
 
-* [ili9341-spi-example]() - STM32F4-DISCOVERY kit example
+* [ili9341-spi-example](https://github.com/hornmich/ili9341-spi-example) - STM32F4-DISCOVERY kit example
